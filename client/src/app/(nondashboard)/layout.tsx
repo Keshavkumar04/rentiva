@@ -14,6 +14,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    if (!authLoading && !authUser) {
+      setIsLoading(false);
+      return;
+    }
     if (authUser) {
       const userRole = authUser.userRole?.toLowerCase();
       if (

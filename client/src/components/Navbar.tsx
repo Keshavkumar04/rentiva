@@ -51,8 +51,8 @@ const Navbar = () => {
           >
             <div className="flex items-center gap-3">
               <Image
-                src="/logo.svg"
-                alt="Rentiful Logo"
+                src="/beach.png"
+                alt="Rentiva Logo"
                 width={24}
                 height={24}
                 className="w-6 h-6"
@@ -60,7 +60,7 @@ const Navbar = () => {
               <div className="text-xl font-bold">
                 RENT
                 <span className="text-secondary-600 font-light hover:!text-primary-300">
-                  IFUL
+                  IVA
                 </span>
               </div>
             </div>
