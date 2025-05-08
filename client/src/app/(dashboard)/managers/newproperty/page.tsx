@@ -63,6 +63,63 @@ const NewProperty = () => {
     await createProperty(formData);
   };
 
+  // const onSubmit = async (data: PropertyFormData) => {
+  //   if (!authUser?.cognitoInfo?.userId) {
+  //     throw new Error("No manager ID found");
+  //   }
+
+  //   // Ensure the file objects are valid and log their properties
+  //   if (data.photoUrls && data.photoUrls.length > 0) {
+  //     console.log("Verifying file objects before appending to FormData:");
+  //     (data.photoUrls as File[]).forEach((file, index) => {
+  //       console.log(
+  //         `File ${index}: name=${file.name}, size=${file.size} bytes, type=${file.type}`
+  //       );
+  //     });
+  //   } else {
+  //     console.log("No files found in photoUrls.");
+  //   }
+
+  //   // Build the FormData and log its contents for debugging
+  //   const formData = new FormData();
+  //   Object.entries(data).forEach(([key, value]) => {
+  //     if (key === "photoUrls" && value) {
+  //       const files = value as File[];
+  //       files.forEach((file: File) => {
+  //         formData.append("photos", file);
+  //       });
+  //     } else if (Array.isArray(value)) {
+  //       formData.append(key, JSON.stringify(value));
+  //     } else {
+  //       formData.append(key, String(value));
+  //     }
+  //   });
+
+  //   // Append managerCognitoId separately
+  //   formData.append("managerCognitoId", authUser.cognitoInfo.userId);
+
+  //   // Debug log for FormData content
+  //   console.log("FormData keys and their values:");
+  //   for (const [key, val] of formData.entries()) {
+  //     // For file entries, log file specific properties
+  //     if (val instanceof File) {
+  //       console.log(
+  //         `Key: ${key} - File: name=${val.name}, size=${val.size}, type=${val.type}`
+  //       );
+  //     } else {
+  //       console.log(`Key: ${key} - Value: ${val}`);
+  //     }
+  //   }
+
+  //   // Finally, send the FormData
+  //   try {
+  //     await createProperty(formData);
+  //     console.log("Property created successfully!");
+  //   } catch (error) {
+  //     console.error("Error during property creation:", error);
+  //   }
+  // };
+
   return (
     <div className="dashboard-container">
       <Header
